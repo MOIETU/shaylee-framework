@@ -56,7 +56,7 @@
         <shardingsphere.version>4.0.0</shardingsphere.version>
 
         <!-- 认证授权 -->
-        <shiro.version>1.4.0</shiro.version>
+        <shiro.version>1.5.1</shiro.version>
         <java-jwt.version>3.4.0</java-jwt.version>
         <security.oauth.version>2.3.6.RELEASE</security.oauth.version>
     </properties>
