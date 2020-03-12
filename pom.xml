@@ -41,7 +41,7 @@
         <guava.version>20.0</guava.version>
         <lombok.version>1.18.4</lombok.version>
         <commons.lang.version>3.7</commons.lang.version>
-        <commons.fileupload.version>1.3.1</commons.fileupload.version>
+        <commons.fileupload.version>1.3.3</commons.fileupload.version>
         <commons.io.version>2.5</commons.io.version>
         <commons.codec.version>1.10</commons.codec.version>
 
@@ -56,7 +56,7 @@
         <shardingsphere.version>4.0.0</shardingsphere.version>
 
         <!-- 认证授权 -->
-        <shiro.version>1.4.0</shiro.version>
+        <shiro.version>1.5.1</shiro.version>
         <java-jwt.version>3.4.0</java-jwt.version>
         <security.oauth.version>2.3.6.RELEASE</security.oauth.version>
     </properties>
