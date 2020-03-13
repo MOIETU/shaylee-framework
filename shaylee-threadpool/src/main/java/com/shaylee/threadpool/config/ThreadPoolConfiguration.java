@@ -1,5 +1,7 @@
-package com.shaylee.threadpool;
+package com.shaylee.threadpool.config;
 
+import com.shaylee.threadpool.ThreadPool;
+import com.shaylee.threadpool.manager.ThreadPoolManager;
 import com.shaylee.threadpool.properties.ThreadPoolManagerProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +26,7 @@ public class ThreadPoolConfiguration {
     @Autowired
     ThreadPoolManagerProperties threadPoolManagerProperties;
 
-    @Bean("threadPoolMap")
+    @Bean("threadPools")
     public Map<String, ThreadPool> threadPoolMap() {
         logger.info("initThreadPool begin...");
         Map<String, ThreadPool> threadPoolMap = this.initThreadPool();

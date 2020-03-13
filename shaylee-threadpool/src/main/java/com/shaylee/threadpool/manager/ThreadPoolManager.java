@@ -1,18 +1,25 @@
-package com.shaylee.threadpool;
+package com.shaylee.threadpool.manager;
 
+import com.shaylee.threadpool.ThreadPool;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 线程池管理
- * Project: shaylee-framework
+ * Title: 线程池管理
+ * Company: v-degree
+ * Project: zeta
  *
- * @author Adrian
+ * @author Beck
+ * @version 1.0
  * @date 2020-03-13
  */
+@Component
 public class ThreadPoolManager {
 
-    private static Map<String, ThreadPool> threadPools = new ConcurrentHashMap<>();
+    @Resource(name = "threadPools")
+    private Map<String, ThreadPool> threadPools;
 
     /**
      * 创建线程池
@@ -26,10 +33,8 @@ public class ThreadPoolManager {
      */
     public static ThreadPool createThreadPool(String poolName, int corePoolSize,
                                               int maximumPoolSize, long keepAliveTime, long waitTime, boolean isCallerRuns) {
-        ThreadPool threadPool = new ThreadPool(poolName, corePoolSize, maximumPoolSize,
+        return new ThreadPool(poolName, corePoolSize, maximumPoolSize,
                 keepAliveTime, waitTime, isCallerRuns);
-        threadPools.put(poolName, threadPool);
-        return threadPool;
     }
 
     /**
@@ -38,7 +43,7 @@ public class ThreadPoolManager {
      * @param poolName 线程池名称
      * @return 线程池
      */
-    public static ThreadPool getThreadPool(String poolName) {
+    public ThreadPool getThreadPool(String poolName) {
         return threadPools.get(poolName);
     }
 
@@ -47,8 +52,7 @@ public class ThreadPoolManager {
      *
      * @return 线程池Map容器
      */
-    public static Map<String, ThreadPool> getThreadPools() {
+    public Map<String, ThreadPool> getThreadPools() {
         return threadPools;
     }
-
 }
